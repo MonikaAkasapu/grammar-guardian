@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammar Guardian | Speech Analysis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container py-5">
+        <div class="glass-card col-lg-8 mx-auto">
+            <h1 class="text-center mb-4 display-4 fw-bold text-gradient">Grammar Guardian</h1>
+            
+            <div class="text-center mb-4">
+                <button class="mic-btn rounded-circle btn btn-primary" id="startBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
+                        <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/>
+                        <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z"/>
+                    </svg>
+                </button>
+                <div class="mt-2" id="status">Click microphone to start recording</div>
+            </div>
+
+            <div id="results" class="result-card">
+                <div class="mb-4">
+                    <h3 class="h4">Your Speech</h3>
+                    <div class="p-3 bg-light rounded" id="transcript"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="p-3 bg-primary text-white rounded">
+                            <h5 class="mb-0">Grammar Score</h5>
+                            <div class="display-4 fw-bold" id="score">-</div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-8">
+                        <h4 class="mb-3">Feedback</h4>
+                        <div id="feedback" class="list-group"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

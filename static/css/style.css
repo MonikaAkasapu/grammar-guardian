@@ -1,0 +1,43 @@
+:root {
+    --gradient-start: #6366f1;
+    --gradient-end: #a855f7;
+}
+
+body {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin: 2rem auto;
+}
+
+.mic-btn {
+    width: 80px;
+    height: 80px;
+    transition: all 0.3s ease;
+    border: none;
+    background: var(--gradient-start);
+}
+
+.mic-btn.listening {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+}
+
+.result-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.show-result {
+    opacity: 1;
+    transform: translateY(0);
+}
